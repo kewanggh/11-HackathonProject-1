@@ -1,0 +1,30 @@
+<div class="container-fluid flip">
+    <div class="panel panel-default fadeIn card" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped" id="boxes" ng-repeat="music in vm.musicArray">
+        <!-- <div> -->
+        <div class="face front">
+            <div class="panel-heading " id="panelhead">
+                <h3 class="panel-title">{{music.album.title}}</h3>
+            </div>
+            <div class="panel-body">
+                <img ng-src="{{music.album.cover_medium}}" height=170px width=120px align="middle">
+                <a href="https://www.youtube.com/results?search_query={{music.album.title}}"><img src="/app/css/youtube.png" width=60px height=50px opacity=0.5 id="ytb"></a>
+                <!--            <button class="btn btn-default" type="button"  ng-click="vm.getDetails(input)"> -->
+                <!--      <p>
+                <a ui-sref="main.details({name: movie.Title})">Click here for more details!</a></button>
+            </p> -->
+                <p class="panel-title">{{music.artist.name}}</p>
+                <div id="flipbutton">Flip me!</div>
+                <audio controls>
+                    <source ng-src="{{vm.trustSrc(music.preview)}}" type="audio/mp3">
+                </audio>
+            </div>
+        </div>
+        <div class="face back">
+            <video width="320" height="280" controls>
+                <source ng-src="{{vm.trustSrc(vm.vineArray[$index].videoUrl)}}" type="video/mp4">
+            </video>
+        </div>
+        <!--  </div> -->
+    </div>
+</div>
+<div ui-view></div>

@@ -1,0 +1,42 @@
+<!-- movie name section -->
+<div class="headerdiv">
+    <ul class="nav navbar-nav navbar-right" id="nav">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a ui-sref="main" id="toptab">Home</a></li>
+                <li><a ui-sref="main.about" id="abouttab">About</a></li>
+                <li><a ui-sref="main.apis" id="apitab">API Used</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a>ThankU 4 Visiting!</a></li>
+            </ul>
+        </li>
+    </ul>
+    <h1 class="icon ">Hackathon Project #1</h1>
+    <img ng-src="/app/css/{{vm.mood}}.png" id="emoji">
+    <div class="input-group" id="inputgroup">
+        <div class="col-md-6">
+            <input type="text" class="form-control" ng-model="input" placeholder="Search for any song or artist..." id="inputfield">
+            <span class="input-group-btn">
+        <button class="btn btn-default" type="button"  ng-click="vm.getMusic(input)"><a ui-sref="main.results">Go!</a></button>
+        </span>
+        </div>
+        <div class="col-md-6">
+            <!--  </div>
+    <div class="input-group col-md-6"> -->
+            <input type="text" class="form-control" ng-model="moodinput" placeholder="Songs generated based on world's most intelligent sentiment analyser..." id="inputfield">
+            <span class="input-group-btn">
+        <button class="btn btn-default" type="button"  ng-click="vm.find(moodinput)"><a ui-sref="main.results">Go!</a></button>
+        </span>
+        </div>
+    </div>
+    <!-- <div id="bar"></div> -->
+</div>
+<!-- input section -->
+<div>
+    <div id="quote">
+        <br>“Thousands of candles can be lighted from a single candle, and the life of the candle will not be shortened. Happiness never decreases by being shared.” Buddha <img src="/app/css/candle.png" height=60px width=80px id="candle" class="pulse">
+    </div>
+    <!-- <pre>{{vm.movies}}</pre> -->
+    <footer>design by Adam & Ke</footer>
+    <div ui-view></div>
