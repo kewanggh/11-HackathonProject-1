@@ -35,7 +35,7 @@
 <!-- input section -->
 <div>
     <div id="quote">
-        <br>“Thousands of candles can be lighted from a single candle, and the life of the candle will not be shortened. Happiness never decreases by being shared.” Buddha <img src="/app/css/candle.png" height=60px width=80px id="candle" class="pulse">
+        "{{vm.qouteResults.quote}}" <br> {{vm.qouteResults.author}}<!-- "“Thousands of candles can be lighted from a single candle, and the life of the candle will not be shortened. Happiness never decreases by being shared.” Buddha  --><img src="/app/css/candle.png" height=60px width=80px id="candle" class="pulse" ng-click="vm.getQuote(vm.quote)">
     </div>
     <!-- <pre>{{vm.movies}}</pre> -->
     <footer>design by Adam & Ke</footer>

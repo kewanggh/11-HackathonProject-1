@@ -269,7 +269,8 @@ audio {
     color: darkgrey;
     /* line-height: 13em;*/
     position: relative;
-    padding: 50px auto;
+    line-height: 40px;
+    padding: 50px 30px 50px 30px;
 }
 
 #ipsum {
@@ -283,12 +284,12 @@ audio {
     color: darkgrey;
     /* line-height: 13em;*/
     position: relative;
-    padding: 50px auto;
+    padding: 50px 30px 50px 30px;
 }
 
 #candle {
     position: absolute;
-    right: 30px;
+    right: -30px;
 }
 
 #ytb {

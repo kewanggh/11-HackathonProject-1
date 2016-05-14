@@ -25,13 +25,17 @@
         $("#apitab").on("click", function() {
             $("#quote").hide();
         });
+        $("#toptab").on("click", function() {
+            $("#quote").show();
+        });
 
-
+        var get = "GET";
+        var post = "POST";
 
         vm.getMusic = function(music) {
             $("#quote").hide();
             var url = 'https://deezerdevs-deezer.p.mashape.com/search?q=' + music;
-            MoosicFactory.getMusic(url).then(
+            MoosicFactory.getMusic(url, get).then(
                 function(response) {
                     vm.musicResults = response.data;
                     vm.musicArray = vm.musicResults.data;
@@ -49,7 +53,7 @@
         vm.find = function(phrase) {
             $("#quote").hide();
             var url = 'https://loudelement-free-natural-language-processing-service.p.mashape.com/nlp-text/?text=' + phrase;
-            MoosicFactory.getMusic(url).then(
+            MoosicFactory.getMusic(url, get).then(
                 function(response) {
                     vm.results = response.data;
                     /* vm.movies = vm.results.Search;*/
@@ -78,7 +82,7 @@
 
         vm.getVine = function(vine) {
             var url = 'https://community-vineapp.p.mashape.com/timelines/tags/' + vine;
-            MoosicFactory.getMusic(url).then(
+            MoosicFactory.getMusic(url, get).then(
                 function(response) {
                     vm.vineResults = response.data;
                     /*vm.vineArray = vm.vineResults.data;*/
@@ -98,6 +102,39 @@
                     $log.error('Sorry there has been an error connecting to the API', error)
                 });
         };
+
+        vm.quote = "famous";
+
+        vm.getQuote = function(quote) {
+            var url = 'https://andruxnet-random-famous-quotes.p.mashape.com/?cat=' + quote;
+            MoosicFactory.getMusic(url, post).then(
+                function(response) {
+                    vm.qouteResults = response.data;
+                    /*   console.log(vm.qouteResults);*/
+
+
+                },
+                function(error) {
+                    $log.error('Sorry there has been an error connecting to the API', error)
+                });
+        };
+
+        getQuote(vm.quote);
+
+        function getQuote(quote) {
+            var url = 'https://andruxnet-random-famous-quotes.p.mashape.com/?cat=' + quote;
+            MoosicFactory.getMusic(url, post).then(
+                function(response) {
+                    vm.qouteResults = response.data;
+                    /*console.log(vm.qouteResults);*/
+
+                },
+                function(error) {
+                    $log.error('Sorry there has been an error connecting to the API', error)
+                });
+        };
+
+
 
 
 

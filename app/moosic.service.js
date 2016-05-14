@@ -21,12 +21,12 @@
 
 
 
-        function getMusic(url) {
+        function getMusic(url, method) {
             var defer = $q.defer();
             /*var url = 'http://www.omdbapi.com/?s=';*/
 
             $http({
-                    method: 'GET',
+                    method: method,
                     url: url
                         /*   params: {
                                        s: movie,
